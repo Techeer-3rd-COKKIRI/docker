@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   postgres-db:
     image: postgres
@@ -20,8 +20,8 @@ services:
       - "8080:8080"
     depends_on:
       - postgres-db
-#    volumes:   프론트랑 합친 후에 볼륨 설정 예정
- nginx_proxy:
+  #    volumes:   프론트랑 합친 후에 볼륨 설정 예정
+  nginx_proxy:
     image: nginx:latest
     container_name: nginx_proxy
     restart: "on-failure"
