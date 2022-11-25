@@ -21,3 +21,12 @@ services:
     depends_on:
       - postgres-db
 #    volumes:   프론트랑 합친 후에 볼륨 설정 예정
+ nginx_proxy:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: "on-failure"
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./frontend/build:/usr/share/nginx/html
