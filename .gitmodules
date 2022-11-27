@@ -3,4 +3,4 @@
 	url = https://github.com/Techeer-3rd-COKKIRI/backend.git
 [submodule "frontend"]
 	path = frontend
-	url =https://github.com/Techeer-3rd-COKKIRI/frontend.git
+	url = https://github.com/Techeer-3rd-COKKIRI/frontend.git
