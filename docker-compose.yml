@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   postgresql:
     container_name: postgresql
@@ -27,4 +27,14 @@ services:
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
-#    volumes:   프론트랑 합친 후에 볼륨 설정 예정
+  #    volumes:   프론트랑 합친 후에 볼륨 설정 예정
+
+  nginx_proxy:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: "on-failure"
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./frontend/dist:/usr/share/nginx/html
